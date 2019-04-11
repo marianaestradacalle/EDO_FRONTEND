@@ -1,0 +1,16 @@
+[{
+        "icon": "person",
+        "titulo": "Paciente",
+        "redirectTo": "/paciente"
+    },
+    {
+        "icon": "calendar",
+        "titulo": "Cronograma",
+        "redirectTo": "/cronograma"
+    },
+    {
+        "icon": "contacts",
+        "titulo": "Nosotros",
+        "redirectTo": "/nosotros"
+    }
+]

@@ -1,0 +1,45 @@
+<ion-header no-border>
+    <ion-toolbar color="header">
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <ion-content padding class="img">
+                    <img src="/assets/logo.png" style="align-items: center">
+                </ion-content>
+
+            </ion-col>
+        </ion-row>
+        <div class="botones">
+            <ion-row>
+                <ion-col>
+                    <ion-button color="header" [routerLink]="['/login']">
+                        <ion-icon name="log-in" slot="end"></ion-icon>
+                        INICIAR SESIÓN
+                    </ion-button>
+                </ion-col>
+            </ion-row>
+
+            <ion-row>
+                <ion-col>
+                    <ion-button color="header" routerLink="/registro-e">
+                        <ion-icon name="reorder" slot="end"></ion-icon>
+                        REGISTRARSE
+                    </ion-button>
+                </ion-col>
+            </ion-row>
+
+        </div>
+    </ion-grid>
+
+
+
+</ion-content>
+
+<ion-footer>
+    <ion-toolbar color="header">
+    </ion-toolbar>
+</ion-footer>
