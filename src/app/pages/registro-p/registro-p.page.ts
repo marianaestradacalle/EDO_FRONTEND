@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, NgModel } from '@angular/forms';
+import { FormGroup, FormControl, NgModel, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { EncargadoService } from 'src/app/services/encargado.service';
 import { AlertsService } from 'src/app/services/alerts.service';
@@ -20,11 +20,12 @@ export class RegistroPPage implements OnInit {
     private alertService: AlertsService) {
 
     this.forma = new FormGroup({
-      cc:  new FormControl(''),
-      nombre: new FormControl(''),
-      apellido: new FormControl(''),
+      cc:  new FormControl('', [Validators.required, Validators.minLength(8), Validators.maxLength(10)]),
+      nombre: new FormControl('', Validators.pattern('')),
+      apellidos: new FormControl(''),
       genero: new FormControl(''),
-      fechaNacimiento: new FormControl('')
+      fechaNacimiento: new FormControl(''),
+      tarjeta: new FormControl('')
     });
     console.log(this.forma);
   }
@@ -35,10 +36,15 @@ export class RegistroPPage implements OnInit {
   registrarP(form: NgModel) {
     this.pacienteService.registroP(form.value).subscribe (value => {
       this.pacienteService.Paciente = value;
-      this.router.navigate(['inicio']);
+      this.clearForm();
+      this.router.navigate(['pprincipal']);
       console.log(value);
     });
     console.log(form);
+  }
+
+  clearForm() {
+    this.forma.reset();
   }
 
 }
