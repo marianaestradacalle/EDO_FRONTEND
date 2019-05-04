@@ -15,6 +15,10 @@ export class PacienteService {
     return this.http.get(this.url + 'paciente', cc);
   }
 
+  getAP() {
+    return this.http.get( this.url + 'paciente');
+  }
+
   registroP(body) {
     return this.http.post(this.url + 'paciente', body);
   }

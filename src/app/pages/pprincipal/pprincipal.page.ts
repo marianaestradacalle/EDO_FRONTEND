@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuController } from '@ionic/angular';
 import { Opcion } from 'src/app/interfaces/interfaces';
+import { PacienteService } from '../../services/paciente.service';
 
 @Component({
   selector: 'app-pprincipal',
@@ -9,9 +10,14 @@ import { Opcion } from 'src/app/interfaces/interfaces';
 })
 export class PprincipalPage implements OnInit {
 
-  opciones: Opcion[] = [];
+   pacientes = [];
 
-  constructor( private menuCtrl: MenuController) { }
+  constructor(private menuCtrl: MenuController, public pacienteService: PacienteService) {
+    this.pacienteService.getAP().subscribe( (res: any) => {
+      this.pacientes = res;
+      console.log(this.pacientes);
+    });
+  }
 
 
 
