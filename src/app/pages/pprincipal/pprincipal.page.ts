@@ -13,13 +13,11 @@ export class PprincipalPage implements OnInit {
    pacientes = [];
 
   constructor(private menuCtrl: MenuController, public pacienteService: PacienteService) {
-    this.pacienteService.getAP().subscribe( (res: any) => {
-      this.pacientes = res;
-      console.log(this.pacientes);
-    });
+    // this.pacienteService.getAP().subscribe( (res: any) => {
+    //   this.pacientes = res;
+    //   console.log(this.pacientes);
+    // });
   }
-
-
 
   ngOnInit() {
   }

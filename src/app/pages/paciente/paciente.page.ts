@@ -11,10 +11,10 @@ export class PacientePage implements OnInit {
   pacientes = [];
 
   constructor(public pacienteService: PacienteService) {
-    this.pacienteService.getAP().subscribe( (res: any) => {
-      this.pacientes = res;
-      console.log(this.pacientes);
-    });
+    // this.pacienteService.getAP().subscribe( (res: any) => {
+    //   this.pacientes = res;
+    //   console.log(this.pacientes);
+    // });
   }
 
   ngOnInit() {
