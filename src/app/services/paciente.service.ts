@@ -1,33 +1,36 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { URL_API } from 'src/config';
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {URL_API} from 'src/config';
+import {EncargadoService} from './encargado.service';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class PacienteService {
-  url = URL_API;
-  Paciente ;
-  constructor(private http: HttpClient) {
+    url = URL_API;
+    Paciente;
 
-  }
-  getP(cc) {
-    return this.http.get(this.url + 'paciente', cc);
-  }
+    constructor(private http: HttpClient, private encargadoService: EncargadoService) {
 
-  getAP() {
-    return this.http.get( this.url + 'paciente');
-  }
+    }
 
-  registroP(body) {
-    return this.http.post(this.url + 'paciente', body);
-  }
+    getP(cc) {
+        return this.http.get(this.url + 'paciente', cc);
+    }
 
-  eliminarP(cc) {
-    return this.http.delete(this.url + 'paciente', cc);
-  }
+    getAP() {
+        return this.http.get(this.url + 'paciente/');
+    }
 
-  actualizarP(body) {
-    return this.http.put(this.url, 'paciente', body);
-  }
+    registroP(body) {
+        return this.http.post(this.url + 'paciente', {...body, encargado: this.encargadoService.encargado.cc});
+    }
+
+    eliminarP(cc) {
+        return this.http.delete(this.url + 'paciente', cc);
+    }
+
+    actualizarP(body) {
+        return this.http.put(this.url, 'paciente', body);
+    }
 }

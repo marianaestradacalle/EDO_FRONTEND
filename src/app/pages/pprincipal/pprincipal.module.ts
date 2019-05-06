@@ -13,7 +13,7 @@ const routes: Routes = [
   {
     path: '', component: PprincipalPage, children: [
 
-      // { path: 'paciente', loadChildren: './pages/paciente/paciente.module#PacientePageModule' },
+      { path: 'paciente', loadChildren: './pages/paciente/paciente.module#PacientePageModule' },
       { path: 'registro-p', loadChildren: './pages/registro-p/registro-p.module#RegistroPPageModule' },
       { path: 'nosotros', loadChildren: './pages/nosotros/nosotros.module#NosotrosPageModule' }
     ]

@@ -2,31 +2,32 @@
 
 <ion-content>
 
-    <ion-card *ngFor="let p of pacientes">
+    <ion-card *ngFor="let p of pacientes" (click)="info(p.paciente._id)">
         <ion-card-header>
-            <ion-card-subtitle>Cédula: {{p.cc}}</ion-card-subtitle>
-            <ion-card-title>Nombres: {{p.nombre}} {{p.apellidos}}</ion-card-title>
+            <ion-card-subtitle>Cédula: {{p.paciente.cc}}</ion-card-subtitle>
+            <ion-card-title>Nombres: {{p.paciente.nombre}} {{p.paciente.apellidos}}</ion-card-title>
         </ion-card-header>
 
         <ion-card-content> Información
             <p>
-                Género: {{p.genero}}
-                <br> Fecha de nacimiento: {{p.fechaNacimiento}}
-                <br> Número de tarjeta: {{p.tarjeta}}
+                Género: {{p.paciente.genero}}
+                <br> Fecha de nacimiento: {{p.paciente.fechaNacimiento | date}}
+                <br> Número de tarjeta: {{p.paciente.tarjeta.codigo}}
+                Relación: {{p.relacion}}
 
             </p>
         </ion-card-content>
-        <!-- </ion-card>
+    </ion-card>
     <ion-buttons>
         <ion-button class="btn btn-block" color="header" [routerLink]="['/registro-p']">
             AGREGAR PACIENTE
         </ion-button>
-    </ion-buttons> -->
+    </ion-buttons>
 
-        <ion-fab vertical="bottom" horizontal="end" slot="fixed" color="header" [routerLink]="['/registro-p']">
-            <ion-fab-button>
-                <ion-icon name="add"></ion-icon>
-            </ion-fab-button>
-        </ion-fab>
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed" color="header" [routerLink]="['/registro-p']">
+        <ion-fab-button>
+            <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
 
 </ion-content>

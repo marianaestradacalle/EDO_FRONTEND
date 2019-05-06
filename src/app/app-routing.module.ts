@@ -10,7 +10,8 @@ const routes: Routes = [
   { path: 'pprincipal', loadChildren: './pages/pprincipal/pprincipal.module#PprincipalPageModule'},
   { path: 'paciente', loadChildren: './pages/paciente/paciente.module#PacientePageModule' },
   { path: 'registro-p', loadChildren: './pages/registro-p/registro-p.module#RegistroPPageModule' },
-  { path: 'nosotros', loadChildren: './pages/nosotros/nosotros.module#NosotrosPageModule' }
+  { path: 'nosotros', loadChildren: './pages/nosotros/nosotros.module#NosotrosPageModule' },
+  { path: 'info-paciente', loadChildren: './pages/info-paciente/info-paciente.module#InfoPacientePageModule' }
 ];
 
 @NgModule({
