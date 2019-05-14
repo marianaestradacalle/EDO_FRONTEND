@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { PprincipalPage } from './pprincipal.page';
 import { ComponentsModule } from 'src/app/components/components.module';
+import { PacientePageModule } from '../paciente/paciente.module';
 
 
 const routes: Routes = [
@@ -27,7 +28,7 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes),
     ComponentsModule,
-
+    //PacientePageModule
   ],
   declarations: [PprincipalPage]
 })
